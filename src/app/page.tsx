@@ -6,7 +6,16 @@ import { portfolioData, siteConfig, type PeriodSection } from '@/data/portfolio'
 
 // Very Subtle Matrix Rain Effect Component
 function MatrixRain() {
+  const [isClient, setIsClient] = useState(false);
   const characters = '01';
+  
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+  
+  if (!isClient) {
+    return null;
+  }
   
   return (
     <div className="fixed inset-0 pointer-events-none z-[-1] overflow-hidden">
@@ -56,7 +65,7 @@ export default function Home() {
       if (iterations >= originalText.length) {
         clearInterval(interval);
         setTimeout(() => {
-          setDecryptText('[ACCESS_GRANTED]');
+          setDecryptText('[ACCESS_DENIED]');
           setTimeout(() => {
             setDecryptText('DECRYPT_FULL_ARCHIVE');
             setIsDecrypting(false);
@@ -68,25 +77,43 @@ export default function Home() {
     }, 50);
   };
 
-  // Keyboard navigation (simplified)
+  // Keyboard navigation with puzzle
+  const [secretSequence, setSecretSequence] = useState<string[]>([]);
+  const correctSequence = ['h', 'a', 'c', 'k', 't', 'h', 'e', 'p', 'l', 'a', 'n', 'e', 't']; // "hacktheplanet"
+  
   useEffect(() => {
     const handleKeyPress = (event: KeyboardEvent) => {
-      switch (event.key.toLowerCase()) {
-        case 'd':
-          // Trigger decrypt animation
-          handleDecrypt();
-          break;
+      const key = event.key.toLowerCase();
+      
+      if (key === 'd') {
+        // Show access denied
+        handleDecrypt();
+        return;
+      }
+      
+      // Track secret sequence
+      if (key.match(/[a-z]/)) {
+        const newSequence = [...secretSequence, key].slice(-correctSequence.length);
+        setSecretSequence(newSequence);
+        
+        // Check if sequence matches
+        if (newSequence.length === correctSequence.length && 
+            newSequence.every((k, i) => k === correctSequence[i])) {
+          // Grant access!
+          setDecryptText('[SEQUENCE_ACCEPTED]');
+          setTimeout(() => {
+            window.open('https://github.com/eullrich/cypherpunk-portfolio', '_blank');
+            setDecryptText('DECRYPT_FULL_ARCHIVE');
+          }, 2000);
+          setSecretSequence([]);
+        }
       }
     };
 
     window.addEventListener('keydown', handleKeyPress);
     return () => window.removeEventListener('keydown', handleKeyPress);
-  }, [isDecrypting]);
+  }, [isDecrypting, secretSequence, correctSequence, handleDecrypt]);
 
-  // Simplified dash instead of icons
-  const getDash = () => (
-    <span className="text-terminal-green font-bold">-</span>
-  );
 
   return (
     <div className="min-h-screen text-terminal-green font-mono" style={{backgroundColor: 'var(--background)', color: 'var(--foreground)'}}>
@@ -133,39 +160,76 @@ export default function Home() {
                 role="region"
                 aria-labelledby={`section-${section.id}`}
               >
-                <div className="space-y-6">
-                  {section.achievements.map((achievement, index) => (
-                    <div key={index} className="border-l-2 border-terminal-green/30 pl-6 pb-4" role="listitem">
-                      <div className="flex items-start gap-3">
-                        <div className="mt-1.5 flex-shrink-0">
-                          {getDash()}
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <div className="flex flex-wrap items-center gap-3 mb-2">
-                            {achievement.link ? (
-                              <a
-                                href={achievement.link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="project-title text-lg text-white hover:text-terminal-amber focus:outline-none focus:ring-2 focus:ring-terminal-green rounded"
-                                aria-label={`${achievement.title} - opens in new tab`}
-                              >
-                                {achievement.title}
-                              </a>
-                            ) : (
-                              <h3 className="project-title text-lg text-white">
-                                {achievement.title}
-                              </h3>
-                            )}
-                          </div>
-                          <p className="professional-text text-terminal-gray text-base leading-relaxed">
-                            {achievement.description}
-                          </p>
-                        </div>
+                {/* Role Overview Section */}
+                {section.role_overview && (
+                  <div className="role-overview p-6 rounded-lg">
+                    <h3 className="role-overview-title text-xl font-bold">
+                      {section.role_overview.title}
+                    </h3>
+                    <p className="role-overview-company">
+                      {section.role_overview.company_description}
+                    </p>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                      <div className="role-overview-section">
+                        <h4>Key Metrics</h4>
+                        <ul className="role-overview-list">
+                          {section.role_overview.key_metrics.map((metric, index) => (
+                            <li key={index}>{metric}</li>
+                          ))}
+                        </ul>
+                      </div>
+                      
+                      <div className="role-overview-section">
+                        <h4>Responsibilities</h4>
+                        <ul className="role-overview-list">
+                          {section.role_overview.responsibilities.map((resp, index) => (
+                            <li key={index}>{resp}</li>
+                          ))}
+                        </ul>
+                      </div>
+                      
+                      <div className="role-overview-section">
+                        <h4>Key Achievements</h4>
+                        <ul className="role-overview-list">
+                          {section.role_overview.achievements.map((achievement, index) => (
+                            <li key={index}>{achievement}</li>
+                          ))}
+                        </ul>
                       </div>
                     </div>
-                  ))}
-                </div>
+                  </div>
+                )}
+
+                {/* Projects/Achievements Section */}
+                {section.achievements.length > 0 && (
+                  <div className="space-y-6">
+                    {section.achievements.map((achievement, index) => (
+                      <div key={index} className="project-achievement" role="listitem">
+                        <div className="flex flex-wrap items-center gap-3 mb-2">
+                          {achievement.link ? (
+                            <a
+                              href={achievement.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="project-title text-lg text-white hover:text-terminal-amber focus:outline-none focus:ring-2 focus:ring-terminal-green rounded"
+                              aria-label={`${achievement.title} - opens in new tab`}
+                            >
+                              {achievement.title}
+                            </a>
+                          ) : (
+                            <h3 className="project-title text-lg text-white">
+                              {achievement.title}
+                            </h3>
+                          )}
+                        </div>
+                        <p className="professional-text text-terminal-gray text-base leading-relaxed">
+                          {achievement.description}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
             </section>
           ))}
@@ -181,6 +245,9 @@ export default function Home() {
           <h2 id="cta-heading" className="sr-only">Access Additional Projects</h2>
           <p className="text-terminal-gray mb-4">
             Access more classified projects via secure channels
+          </p>
+          <p className="text-terminal-gray/50 text-xs mb-4">
+            {'//'} Hint: The planet needs hackers. Type the battle cry.
           </p>
           <button 
             onClick={handleDecrypt}
@@ -271,9 +338,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="border-t border-terminal-green/20 mt-8 p-6" role="contentinfo">
         <div className="max-w-5xl mx-auto text-center">
-          <blockquote className="text-terminal-gray text-sm professional-text">
-            &quot;{siteConfig.quote}&quot; — {siteConfig.quoteAuthor}
-          </blockquote>
+          {/* Quote removed */}
         </div>
       </footer>
     </div>

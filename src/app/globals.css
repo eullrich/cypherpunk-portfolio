@@ -337,6 +337,128 @@ body::after {
   animation: noise-move 0.5s steps(8, end) infinite;
 }
 
+/* Role Overview Styling */
+.role-overview {
+  background: linear-gradient(135deg, var(--terminal-dark-gray)/40, var(--terminal-dark-gray)/20);
+  border: 1px solid var(--terminal-green)/30;
+  border-left: 4px solid var(--terminal-green);
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.role-overview::before {
+  content: "» ROLE OVERVIEW";
+  position: absolute;
+  top: -10px;
+  left: 12px;
+  background: var(--background);
+  color: var(--terminal-amber);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0 8px;
+  letter-spacing: 0.1em;
+}
+
+.role-overview-title {
+  color: var(--terminal-amber);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.role-overview-company {
+  color: var(--terminal-gray);
+  font-style: italic;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.role-overview-section {
+  margin-bottom: 1rem;
+}
+
+.role-overview-section h4 {
+  color: var(--terminal-green);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.role-overview-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.role-overview-list li {
+  position: relative;
+  padding-left: 1rem;
+  margin-bottom: 0.3rem;
+  color: var(--foreground);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.role-overview-list li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--terminal-green);
+  font-weight: bold;
+}
+
+/* Project/Achievement Styling */
+.project-achievement {
+  border-left: 2px solid var(--terminal-green)/30;
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.project-achievement::before {
+  content: "—";
+  position: absolute;
+  left: -8px;
+  top: 6px;
+  color: var(--terminal-green);
+  font-weight: bold;
+  background: var(--background);
+  padding: 0 2px;
+}
+
+/* Mobile responsiveness for role overview */
+@media (max-width: 768px) {
+  .role-overview {
+    margin-bottom: 1rem;
+  }
+  
+  .role-overview::before {
+    font-size: 0.65rem;
+    top: -8px;
+    left: 8px;
+  }
+  
+  .role-overview-list li {
+    font-size: 0.85rem;
+    margin-bottom: 0.4rem;
+  }
+  
+  .role-overview-section h4 {
+    font-size: 0.8rem;
+    margin-bottom: 0.4rem;
+  }
+  
+  .project-achievement {
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .project-achievement::before {
+    left: -6px;
+  }
+}
+
 /* Screen reader only utility */
 .sr-only {
   position: absolute;

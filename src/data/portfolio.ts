@@ -6,18 +6,47 @@ export interface Achievement {
   icon: string;
 }
 
+export interface RoleOverview {
+  title: string;
+  company_description: string;
+  key_metrics: string[];
+  responsibilities: string[];
+  achievements: string[];
+}
+
 export interface PeriodSection {
   id: string;
   period: string;
   company: string;
+  role_overview?: RoleOverview;
   achievements: Achievement[];
 }
 
 export const portfolioData: PeriodSection[] = [
   {
-    id: '2023-2024',
-    period: '2023-2024',
+    id: '2023-2025',
+    period: '2023-2025',
     company: 'BlockJoy',
+    role_overview: {
+      title: 'Account Executive & Sales Manager',
+      company_description: 'Automated compute and API deployment infrastructure',
+      key_metrics: [
+        'First sales hire at early-stage startup',
+        'Scaled to $XM ARR across 30+ enterprise accounts',
+        'Built outbound engine across X, Telegram, LinkedIn, conferences'
+      ],
+      responsibilities: [
+        'Full-cycle sales: outbound, qualification, negotiation, post-sales',
+        'Developed pricing and packaging with founders',
+        'Created collateral and CRM frameworks',
+        'Ran weekly pipeline reviews and quarterly board reports'
+      ],
+      achievements: [
+        'Established GTM motion from zero',
+        'Influenced product roadmap through customer feedback',
+        'Onboarded first customers working closely with founders'
+      ]
+    },
     achievements: [
       {
         title: 'Goldsky Customer Case Study',
@@ -45,7 +74,26 @@ export const portfolioData: PeriodSection[] = [
   {
     id: '2021-2022',
     period: '2021-2022',
-    company: 'Pocket Network',
+    company: 'Pocket Network / Grove',
+    role_overview: {
+      title: 'Account Executive & Sales Manager',
+      company_description: 'API Services targeting digital assets, trading platforms, emerging markets',
+      key_metrics: [
+        'Managed global team (2 AEs, 1 SDR)',
+        'Drove $XM ARR in H2 2022',
+        'Closed key clients: Polygon, EVMOS, Klaytn, Aave'
+      ],
+      responsibilities: [
+        'Co-led GTM strategy with Product, Marketing, Finance teams',
+        'Established revops: CRM, reporting, commissions, contracts',
+        'Ran weekly cross-functional sales & GTM pipeline reviews'
+      ],
+      achievements: [
+        'Successfully launched Grove API services',
+        'Built scalable revenue operations framework',
+        'Secured major Web3 infrastructure partnerships'
+      ]
+    },
     achievements: [
       {
         title: 'Polygon Partnership',
@@ -71,9 +119,31 @@ export const portfolioData: PeriodSection[] = [
     ]
   },
   {
-    id: '2013-2020',
-    period: '2013-2020',
+    id: '2013-2022',
+    period: '2013-2022',
     company: 'Hacker Lab',
+    role_overview: {
+      title: 'Cofounder & Operations Leadership',
+      company_description: 'Startup incubator, coworking space, and technical training center',
+      key_metrics: [
+        '3 locations spanning 50K sq ft',
+        'Led 12-person team and 40+ instructors',
+        '$50M+ in startup funding generated (Requested, Grin Apps, Tscope)',
+        'Enterprise clients: Intel, Sierra College, UC Davis, SMUD, State of California'
+      ],
+      responsibilities: [
+        'Scaled operations from concept to award-winning innovation hub',
+        'Managed multi-location coworking and makerspace operations',
+        'Developed partnerships with government and enterprise clients',
+        'Oversaw technical training and educational programs'
+      ],
+      achievements: [
+        'Built Sacramento\'s premier tech innovation ecosystem',
+        'Created pre-seed accelerator bootcamp program',
+        'Secured major enterprise deals and government contracts',
+        'Established sustainable revenue model across B2B and B2C'
+      ]
+    },
     achievements: [
       {
         title: 'Rocklin Makerspace Expansion',
@@ -218,8 +288,8 @@ export const portfolioData: PeriodSection[] = [
     ]
   },
   {
-    id: '2007-2010',
-    period: '2007-2010',
+    id: '2009-2010',
+    period: '2009-2010',
     company: 'AG Edwards / Wells Fargo',
     achievements: [
       {
@@ -246,15 +316,15 @@ export const portfolioData: PeriodSection[] = [
     ]
   },
   {
-    id: '2005-2007',
-    period: '2005-2007',
+    id: '2006-2008',
+    period: '2006-2008',
     company: 'College Activities',
     achievements: [
       {
         title: 'Sustainable Career Fair',
         description: 'Founded Enviro Business Society\'s first annual sustainable career fair, bringing together 50+ companies in Southern California',
         status: '[FOUNDED]',
-        link: 'https://facebook.com',
+        link: null,
         icon: 'eye'
       }
     ]
