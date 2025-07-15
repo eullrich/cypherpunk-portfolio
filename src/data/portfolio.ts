@@ -20,24 +20,17 @@ export const portfolioData: PeriodSection[] = [
     company: 'BlockJoy',
     achievements: [
       {
-        title: 'Optimism Retro Funding',
-        description: 'Secured Optimism Retro Funding for developer contributions in Ethereum ecosystem',
-        status: '[SECURED]',
-        link: 'https://round5.retrolist.app',
-        icon: 'zap'
-      },
-      {
         title: 'Goldsky Customer Case Study',
         description: 'Featured Goldsky in customer case study on blockchain data infrastructure',
         status: '[PUBLISHED]',
-        link: 'https://youtube.com',
+        link: 'https://x.com/BlockJoyWeb3/status/1861801924342726856',
         icon: 'eye'
       },
       {
         title: 'SQD Case Study',
         description: 'Featured SQD in customer case study on data processing solutions',
         status: '[FEATURED]',
-        link: 'https://www.blockjoy.com/',
+        link: 'https://x.com/BlockJoyWeb3/status/1859669579506872804',
         icon: 'terminal'
       },
       {
@@ -83,94 +76,108 @@ export const portfolioData: PeriodSection[] = [
     company: 'Hacker Lab',
     achievements: [
       {
-        title: 'COVID-19 SBA Consulting',
-        description: 'Provided SBA consulting services during COVID-19 pandemic',
-        status: '[DELIVERED]',
-        link: 'https://reddit.com',
-        icon: 'shield'
+        title: 'Rocklin Makerspace Expansion',
+        description: 'Opened new Rocklin location with four times the space for co-working and makerspace operations',
+        status: '[EXPANDED]',
+        link: 'https://www.bizjournals.com/sacramento/news/2016/12/01/hacker-labs-new-rocklin-digs-mean-four-times-the.html',
+        icon: 'terminal'
       },
       {
-        title: 'R Street Makerspace',
-        description: 'Established R Street location as a makerspace and coworking hub',
+        title: 'R Street Industrial Coworking',
+        description: 'Brought industrial coworking space to R Street corridor with makerspace and collaborative workspace',
         status: '[OPERATIONAL]',
-        link: 'https://yelp.com',
+        link: 'https://www.bizjournals.com/sacramento/news/2018/08/21/photos-hacker-lab-brings-industrial-coworking-to.html',
         icon: 'terminal'
       },
       {
-        title: 'I Street Location',
-        description: 'Established I Street location for collaborative tech workspace',
+        title: 'Midtown I Street Location',
+        description: 'Secured larger space in Midtown Sacramento to expand collaborative tech workspace operations',
         status: '[ESTABLISHED]',
-        link: 'https://mapquest.com',
+        link: 'https://www.bizjournals.com/sacramento/news/2019/01/17/hacker-lab-lands-larger-space-in-midtown.html',
         icon: 'terminal'
       },
       {
-        title: 'Rancho Cordova Partnership',
-        description: 'Partnered with City of Rancho Cordova to support innovation and entrepreneurship',
-        status: '[ACTIVE]',
-        link: 'https://cityofranchocordova.org',
-        icon: 'key'
-      },
-      {
-        title: 'California Community Colleges',
-        description: 'Collaborated with California Community Colleges, including Sierra College partnership',
+        title: 'Sierra College Partnership',
+        description: 'Welcomed by Sierra College to establish Rocklin campus makerspace and manage $1.7M in maker space funding',
         status: '[PARTNERED]',
-        link: 'https://reddit.com',
+        link: 'https://www.comstocksmag.com/web-only/sierra-college-welcomes-hacker-lab-rocklin',
         icon: 'key'
       },
       {
-        title: 'Startup Hustle Program',
-        description: 'Launched Startup Hustle as a pre-accelerator program for budding entrepreneurs',
+        title: 'Startup Hustle Demo Night',
+        description: 'Launched Startup Hustle as pre-accelerator program with demo nights for budding entrepreneurs',
         status: '[LAUNCHED]',
-        link: 'https://startupsac.com',
+        link: 'https://www.comstocksmag.com/featured-event/hacker-labs-startup-hustle-demo-night',
         icon: 'zap'
       },
       {
-        title: 'Success Stories',
-        description: 'Fostered success stories including Tcheck, Grin Apps, and Requested (acquired by X, later public)',
-        status: '[ACQUIRED]',
-        link: 'https://hackerlab.org',
-        icon: 'eye'
-      },
-      {
-        title: 'Sac Made Initiative',
-        description: 'Contributed to City of Sacramento\'s Sac Made initiative through MADE Studio',
-        status: '[CONTRIBUTED]',
-        link: 'https://sacmade.com',
-        icon: 'eye'
-      },
-      {
-        title: 'Sierra Energy Partnership',
-        description: 'Partnered with Sierra Energy on makerspace and tech ecosystem development',
-        status: '[PARTNERED]',
-        link: 'https://rosevilletoday.com',
+        title: 'Maker Space Network Development',
+        description: 'Developed network to help maker spaces collaborate and grow across the Sacramento region',
+        status: '[DEVELOPED]',
+        link: 'https://www.bizjournals.com/sacramento/news/2017/05/16/hacker-lab-developing-network-to-help-maker-spaces.html',
         icon: 'key'
       },
       {
-        title: 'Vision Service Plan - The Shop',
-        description: 'Collaborated with Vision Service Plan on The Shop makerspace',
-        status: '[COLLABORATED]',
-        link: 'https://www.vsp.com/',
-        icon: 'shield'
+        title: 'Sacramento Bitcoin Meetup',
+        description: 'Hosted Sacramento Bitcoin meetup bringing crypto community together for education and lobbying',
+        status: '[HOSTED]',
+        link: 'https://www.bizjournals.com/sacramento/news/2018/04/05/sacramento-bitcoin-meetup-brings-rally-lobbying.html',
+        icon: 'zap'
       },
       {
-        title: 'Intel IoT Incubator',
-        description: 'Established Intel IoT Incubator for hardware and tech innovation',
-        status: '[ESTABLISHED]',
-        link: 'https://hackerlab.org/',
+        title: 'Rocklin Co-working Launch',
+        description: 'Launched first Rocklin co-working makerspace location to expand regional presence',
+        status: '[LAUNCHED]',
+        link: 'https://www.bizjournals.com/sacramento/news/2014/12/03/hacker-lab-will-run-rocklin-co-working-makerspace.html',
         icon: 'terminal'
       },
       {
-        title: 'Northrop Grumman Partnership',
-        description: 'Partnered with Northrop Grumman on makerspace initiatives',
+        title: 'Northrop Grumman Defense Partnership',
+        description: 'Partnered with Northrop Grumman on defense industry makerspace initiatives and innovation programs',
         status: '[PARTNERED]',
-        link: null,
+        link: 'https://www.bizjournals.com/sacramento/news/2013/12/23/hacker-lab-defense-northrop-grumman.html',
         icon: 'shield'
       },
       {
-        title: 'Cereal Hack',
-        description: 'Organized Cereal Hack as one of the region\'s first major hackathons',
+        title: 'Sierra College Maker Space Management',
+        description: 'Selected by Sierra College to manage $1.7 million in maker space funding and operations',
+        status: '[MANAGED]',
+        link: 'https://www.bizjournals.com/sacramento/news/2016/07/06/sierra-college-to-manage-17-million-in-maker-space.html',
+        icon: 'key'
+      },
+      {
+        title: 'Regional Hackathon Program',
+        description: 'Organized hackathons bringing ideas, developers, and market opportunities together in Sacramento',
         status: '[ORGANIZED]',
-        link: 'https://cerealhack.devpost.com',
+        link: 'https://www.bizjournals.com/sacramento/news/2013/07/15/hackathon-brings-ideas-developers-market.html',
+        icon: 'zap'
+      },
+      {
+        title: 'Intel Perceptual Computing Hack',
+        description: 'Secured Intel sponsorship for perceptual computing hackathon and interactive technology innovation',
+        status: '[SPONSORED]',
+        link: 'https://www.bizjournals.com/sacramento/blog/mark-anderson/2013/02/intel-sponsoring-perceptual-hack-interac.html',
+        icon: 'terminal'
+      },
+      {
+        title: 'VSP Think Tank Partnership',
+        description: 'Collaborated with Vision Service Plan to set up think tank and innovation space in Old Sacramento',
+        status: '[COLLABORATED]',
+        link: 'https://www.bizjournals.com/sacramento/news/2013/08/26/vsp-think-tank-setting-up-shop-in-old.html',
+        icon: 'shield'
+      },
+      {
+        title: 'Mini Maker Faire at Sierra College',
+        description: 'Helped Rocklin\'s Sierra College land Mini Maker Faire, bringing maker community together',
+        status: '[FACILITATED]',
+        link: 'https://www.bizjournals.com/sacramento/news/2015/08/25/rocklins-sierra-college-lands-mini-maker-faire.html',
+        icon: 'eye'
+      },
+      {
+        title: 'Cereal Hack - Sacramento Apps',
+        description: 'Organized Cereal Hackathon, one of Sacramento\'s first major hackathons for app development',
+        status: '[ORGANIZED]',
+        link: 'https://www.bizjournals.com/sacramento/news/2012/06/04/cereal-hackathon-sacramento-apps.html',
         icon: 'zap'
       }
     ]
@@ -182,31 +189,31 @@ export const portfolioData: PeriodSection[] = [
     achievements: [
       {
         title: 'VentureStart Incubator',
-        description: 'Led VentureStart as a startup incubator for regional tech companies',
+        description: 'Led VentureStart as a startup incubator for regional tech companies and entrepreneurs',
         status: '[LED]',
-        link: 'https://massinvestordatabase.com',
+        link: null,
         icon: 'key'
       },
       {
-        title: 'FastOx Gasifier Prototype',
-        description: 'Developed FastOx gasifier prototype for waste-to-energy conversion',
-        status: '[DEVELOPED]',
-        link: 'https://sierraenergy.com',
-        icon: 'terminal'
+        title: 'SARTA CleanStart Showcase',
+        description: 'Organized CleanStart Showcase highlighting cleantech innovations and sustainable technology startups',
+        status: '[ORGANIZED]',
+        link: 'https://www.bizjournals.com/sacramento/blog/morning-roundup/2012/10/sartas-cleanstart-showcase-highlights.html',
+        icon: 'eye'
       },
       {
-        title: 'DoD Grant',
-        description: 'Secured Technikon DoD grant for gasification technology advancement',
+        title: 'Sierra Energy Federal Defense Grant',
+        description: 'Helped Sierra Energy secure federal grant from Defense Department for waste-to-energy gasification technology',
         status: '[SECURED]',
-        link: 'https://wastetodaymagazine.com',
+        link: 'https://www.bizjournals.com/sacramento/news/2015/10/08/sierra-energy-lands-federal-grant-from-defense.html',
         icon: 'shield'
       },
       {
-        title: 'Cleantech Showcase',
-        description: 'Organized Cleantech Showcase to highlight sustainable innovations',
-        status: '[ORGANIZED]',
-        link: 'https://startupsac.com',
-        icon: 'eye'
+        title: 'FastOx Gasifier Development',
+        description: 'Supported development of FastOx gasifier prototype for waste-to-energy conversion technology',
+        status: '[DEVELOPED]',
+        link: null,
+        icon: 'terminal'
       }
     ]
   },

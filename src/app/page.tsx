@@ -157,19 +157,6 @@ export default function Home() {
                                 {achievement.title}
                               </h3>
                             )}
-                            <span 
-                              className={`text-xs px-2 py-1 border rounded ${
-                                achievement.status.includes('CLASSIFIED') || achievement.status.includes('SECURED')
-                                  ? 'border-terminal-red/50 text-terminal-red bg-terminal-red/5' 
-                                  : achievement.status.includes('ACTIVE') || achievement.status.includes('LAUNCHED')
-                                  ? 'border-terminal-amber/50 text-terminal-amber bg-terminal-amber/5'
-                                  : 'border-terminal-green/50 text-terminal-green bg-terminal-green/5'
-                              }`}
-                              role="status"
-                              aria-label={`Project status: ${achievement.status.replace(/[\[\]]/g, '')}`}
-                            >
-                              {achievement.status}
-                            </span>
                           </div>
                           <p className="professional-text text-terminal-gray text-base leading-relaxed">
                             {achievement.description}
