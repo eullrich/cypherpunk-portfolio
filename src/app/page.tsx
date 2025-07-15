@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Lock, Key, Shield, Terminal, Eye, Zap, Mail, Github } from 'lucide-react';
+import { Terminal } from 'lucide-react';
 import { portfolioData, siteConfig, type PeriodSection } from '@/data/portfolio';
 
 // Very Subtle Matrix Rain Effect Component
@@ -83,18 +83,10 @@ export default function Home() {
     return () => window.removeEventListener('keydown', handleKeyPress);
   }, [isDecrypting]);
 
-  const getIcon = (iconName: string) => {
-    const iconProps = { size: 16, className: "text-terminal-green" };
-    switch (iconName) {
-      case 'lock': return <Lock {...iconProps} />;
-      case 'key': return <Key {...iconProps} />;
-      case 'shield': return <Shield {...iconProps} />;
-      case 'eye': return <Eye {...iconProps} />;
-      case 'terminal': return <Terminal {...iconProps} />;
-      case 'zap': return <Zap {...iconProps} />;
-      default: return <Terminal {...iconProps} />;
-    }
-  };
+  // Simplified dash instead of icons
+  const getDash = () => (
+    <span className="text-terminal-green font-bold">-</span>
+  );
 
   return (
     <div className="min-h-screen text-terminal-green font-mono" style={{backgroundColor: 'var(--background)', color: 'var(--foreground)'}}>
@@ -146,7 +138,7 @@ export default function Home() {
                     <div key={index} className="border-l-2 border-terminal-green/30 pl-6 pb-4" role="listitem">
                       <div className="flex items-start gap-3">
                         <div className="mt-1.5 flex-shrink-0">
-                          {getIcon(achievement.icon)}
+                          {getDash()}
                         </div>
                         <div className="flex-1 min-w-0">
                           <div className="flex flex-wrap items-center gap-3 mb-2">
@@ -253,7 +245,6 @@ export default function Home() {
               className="flex items-center justify-center gap-3 p-4 border border-terminal-green/30 rounded-lg hover:bg-terminal-green/10 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-terminal-green"
               aria-label="Send email"
             >
-              <Mail size={20} className="text-terminal-green" />
               <span className="professional-text text-white">{siteConfig.email}</span>
             </a>
             
@@ -264,7 +255,6 @@ export default function Home() {
               className="flex items-center justify-center gap-3 p-4 border border-terminal-green/30 rounded-lg hover:bg-terminal-green/10 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-terminal-green"
               aria-label="Follow on X (Twitter)"
             >
-              <Terminal size={20} className="text-terminal-green" />
               <span className="professional-text text-white">{siteConfig.twitter}</span>
             </a>
             
@@ -275,7 +265,6 @@ export default function Home() {
               className="flex items-center justify-center gap-3 p-4 border border-terminal-green/30 rounded-lg hover:bg-terminal-green/10 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-terminal-green"
               aria-label="View GitHub profile"
             >
-              <Github size={20} className="text-terminal-green" />
               <span className="professional-text text-white">github.com/{siteConfig.github}</span>
             </a>
             
@@ -286,7 +275,6 @@ export default function Home() {
               className="flex items-center justify-center gap-3 p-4 border border-terminal-green/30 rounded-lg hover:bg-terminal-green/10 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-terminal-green"
               aria-label="Message on Telegram"
             >
-              <Zap size={20} className="text-terminal-green" />
               <span className="professional-text text-white">@{siteConfig.telegram}</span>
             </a>
           </div>
