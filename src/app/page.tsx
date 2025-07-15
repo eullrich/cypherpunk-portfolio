@@ -4,20 +4,20 @@ import { useState, useEffect } from 'react';
 import { Lock, Key, Shield, Terminal, Eye, Zap, Mail, Github } from 'lucide-react';
 import { portfolioData, siteConfig, type PeriodSection } from '@/data/portfolio';
 
-// Subtle Matrix Rain Effect Component
+// Very Subtle Matrix Rain Effect Component
 function MatrixRain() {
   const characters = '01';
   
   return (
     <div className="fixed inset-0 pointer-events-none z-[-1] overflow-hidden">
-      {Array.from({ length: 20 }).map((_, i) => (
+      {Array.from({ length: 8 }).map((_, i) => (
         <div
           key={i}
-          className="matrix-char absolute text-terminal-green/10"
+          className="matrix-char absolute text-terminal-green/5"
           style={{
             left: `${Math.random() * 100}%`,
-            animationDelay: `${Math.random() * 12}s`,
-            animationDuration: `${12 + Math.random() * 8}s`,
+            animationDelay: `${Math.random() * 20}s`,
+            animationDuration: `${20 + Math.random() * 10}s`,
           }}
         >
           {characters.charAt(Math.floor(Math.random() * characters.length))}
@@ -97,12 +97,12 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-terminal-green font-mono">
-      {/* Subtle Matrix Rain Background */}
+    <div className="min-h-screen text-terminal-green font-mono" style={{backgroundColor: 'var(--background)', color: 'var(--foreground)'}}>
+      {/* Very Subtle Matrix Rain Background */}
       <MatrixRain />
       
-      {/* Reduced Noise Overlay */}
-      <div className="noise-overlay" style={{opacity: 0.01}}></div>
+      {/* Disabled Noise Overlay for better readability */}
+      <div className="noise-overlay" style={{display: 'none'}}></div>
       
       {/* Header */}
       <header className="border-b border-terminal-green/30 py-12 px-6" role="banner">

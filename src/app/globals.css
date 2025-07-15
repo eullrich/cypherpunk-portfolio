@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  /* Cypherpunk color scheme */
-  --background: #000000;
-  --foreground: #00ff00;
-  --terminal-green: #00ff00;
-  --terminal-red: #ff0000;
-  --terminal-amber: #ffb000;
-  --terminal-gray: #808080;
-  --terminal-dark-gray: #111111;
+  /* Professional dark theme with better contrast */
+  --background: #0f172a;
+  --foreground: #e2e8f0;
+  --terminal-green: #10b981;
+  --terminal-red: #ef4444;
+  --terminal-amber: #f59e0b;
+  --terminal-gray: #94a3b8;
+  --terminal-dark-gray: #1e293b;
 }
 
 @theme inline {
@@ -46,7 +46,7 @@ body {
 .terminal-text {
   font-family: var(--font-vt323), monospace;
   font-size: 1.25rem;
-  text-shadow: 0 0 3px var(--terminal-green);
+  /* Removed harsh text-shadow for better readability */
 }
 
 /* Professional readability improvements */
@@ -65,7 +65,7 @@ body {
 
 .project-title:hover {
   color: var(--terminal-amber);
-  text-shadow: 0 0 8px var(--terminal-amber);
+  /* Removed harsh text-shadow for better readability */
 }
 
 /* Mobile-specific improvements */
@@ -74,10 +74,10 @@ body {
     font-size: 1rem;
   }
   
-  /* Reduce CRT effects on mobile for better readability */
+  /* Disable CRT effects on mobile for better readability */
   body::before,
   body::after {
-    opacity: 0.3;
+    display: none;
   }
   
   /* Make touch targets larger */
@@ -86,12 +86,12 @@ body {
     min-width: 44px;
   }
   
-  /* Reduce noise on mobile */
+  /* Disable noise on mobile */
   .noise-overlay {
-    opacity: 0.005;
+    display: none;
   }
   
-  /* Simplify glitch effects on mobile */
+  /* Disable glitch effects on mobile */
   .glitch-effect:hover {
     animation: none;
   }
