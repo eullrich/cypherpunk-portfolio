@@ -40,20 +40,6 @@ export const portfolioData: PeriodSection[] = [
     },
     achievements: [
       {
-        title: 'Goldsky Customer Case Study',
-        description: 'Featured Goldsky in customer case study on blockchain data infrastructure',
-        status: '[PUBLISHED]',
-        link: 'https://x.com/BlockJoyWeb3/status/1861801924342726856',
-        icon: 'eye'
-      },
-      {
-        title: 'SQD Case Study',
-        description: 'Featured SQD in customer case study on data processing solutions',
-        status: '[FEATURED]',
-        link: 'https://x.com/BlockJoyWeb3/status/1859669579506872804',
-        icon: 'terminal'
-      },
-      {
         title: '$11M Funding Round',
         description: 'Joined as first business hire, built GTM strategy and supported $11M Series A fundraising for decentralized blockchain operations',
         status: '[COMPLETED]',
@@ -313,9 +299,9 @@ export const siteConfig = {
   description: 'Tech sales & GTM, DeFi and maker space community builder',
   author: 'Eric Ullrich',
   email: 'eullrich@gmail.com',
-  twitter: '@eullrichX',
+  twitter: '@eullrich',
   github: 'eullrich',
-  telegram: 'erxc_uco',
+  telegram: 'erxc_u',
   quote: 'Identifying market opportunities and building revenue engines for emerging tech',
   quoteAuthor: 'Eric Ullrich'
 };
