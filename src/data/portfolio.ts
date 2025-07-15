@@ -78,13 +78,6 @@ export const portfolioData: PeriodSection[] = [
         status: '[LAUNCHED]',
         link: 'https://www.financialexpress.com/business/blockchain-pocket-network-launches-triforce-community-initiative-2589966/',
         icon: 'zap'
-      },
-      {
-        title: 'Evmos Integration',
-        description: 'Closed technical partnership with Evmos to provide RPC node infrastructure, expanding developer ecosystem reach',
-        status: '[INTEGRATED]',
-        link: 'https://medium.com/evmos/pocket-network-joins-evmos-to-provide-builders-with-crucial-rpc-node-infrastructure-66616ea7c3ea',
-        icon: 'terminal'
       }
     ]
   },
