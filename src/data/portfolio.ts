@@ -10,8 +10,6 @@ export interface RoleOverview {
   title: string;
   company_description: string;
   key_metrics: string[];
-  responsibilities: string[];
-  achievements: string[];
 }
 
 export interface PeriodSection {
@@ -33,18 +31,11 @@ export const portfolioData: PeriodSection[] = [
       key_metrics: [
         'First sales hire at early-stage startup',
         'Scaled to $XM ARR across 30+ enterprise accounts',
-        'Built outbound engine across X, Telegram, LinkedIn, conferences'
-      ],
-      responsibilities: [
+        'Built outbound engine across X, Telegram, LinkedIn, conferences',
         'Full-cycle sales: outbound, qualification, negotiation, post-sales',
         'Developed pricing and packaging with founders',
         'Created collateral and CRM frameworks',
         'Ran weekly pipeline reviews and quarterly board reports'
-      ],
-      achievements: [
-        'Established GTM motion from zero',
-        'Influenced product roadmap through customer feedback',
-        'Onboarded first customers working closely with founders'
       ]
     },
     achievements: [
@@ -81,17 +72,10 @@ export const portfolioData: PeriodSection[] = [
       key_metrics: [
         'Managed global team (2 AEs, 1 SDR)',
         'Drove $XM ARR in H2 2022',
-        'Closed key clients: Polygon, EVMOS, Klaytn, Aave'
-      ],
-      responsibilities: [
+        'Closed key clients: Polygon, EVMOS, Klaytn, Aave',
         'Co-led GTM strategy with Product, Marketing, Finance teams',
         'Established revops: CRM, reporting, commissions, contracts',
         'Ran weekly cross-functional sales & GTM pipeline reviews'
-      ],
-      achievements: [
-        'Successfully launched Grove API services',
-        'Built scalable revenue operations framework',
-        'Secured major Web3 infrastructure partnerships'
       ]
     },
     achievements: [
@@ -129,19 +113,11 @@ export const portfolioData: PeriodSection[] = [
         '3 locations spanning 50K sq ft',
         'Led 12-person team and 40+ instructors',
         '$50M+ in startup funding generated (Requested, Grin Apps, Tscope)',
-        'Enterprise clients: Intel, Sierra College, UC Davis, SMUD, State of California'
-      ],
-      responsibilities: [
+        'Enterprise clients: Intel, Sierra College, UC Davis, SMUD, State of California',
         'Scaled operations from concept to award-winning innovation hub',
         'Managed multi-location coworking and makerspace operations',
         'Developed partnerships with government and enterprise clients',
         'Oversaw technical training and educational programs'
-      ],
-      achievements: [
-        'Built Sacramento\'s premier tech innovation ecosystem',
-        'Created pre-seed accelerator bootcamp program',
-        'Secured major enterprise deals and government contracts',
-        'Established sustainable revenue model across B2B and B2C'
       ]
     },
     achievements: [

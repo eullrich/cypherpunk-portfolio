@@ -163,40 +163,16 @@ export default function Home() {
                 {/* Role Overview Section */}
                 {section.role_overview && (
                   <div className="role-overview p-6 rounded-lg">
-                    <h3 className="role-overview-title text-xl font-bold">
-                      {section.role_overview.title}
-                    </h3>
                     <p className="role-overview-company">
                       {section.role_overview.company_description}
                     </p>
                     
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                      <div className="role-overview-section">
-                        <h4>Key Metrics</h4>
-                        <ul className="role-overview-list">
-                          {section.role_overview.key_metrics.map((metric, index) => (
-                            <li key={index}>{metric}</li>
-                          ))}
-                        </ul>
-                      </div>
-                      
-                      <div className="role-overview-section">
-                        <h4>Responsibilities</h4>
-                        <ul className="role-overview-list">
-                          {section.role_overview.responsibilities.map((resp, index) => (
-                            <li key={index}>{resp}</li>
-                          ))}
-                        </ul>
-                      </div>
-                      
-                      <div className="role-overview-section">
-                        <h4>Key Achievements</h4>
-                        <ul className="role-overview-list">
-                          {section.role_overview.achievements.map((achievement, index) => (
-                            <li key={index}>{achievement}</li>
-                          ))}
-                        </ul>
-                      </div>
+                    <div className="role-overview-section">
+                      <ul className="role-overview-list">
+                        {section.role_overview.key_metrics.map((metric, index) => (
+                          <li key={index}>{metric}</li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
                 )}
